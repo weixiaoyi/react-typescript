@@ -1,11 +1,11 @@
+@import "index.scss";
 .App {
   text-align: center;
-  background: red;
-  .desc{
-    color:blue;
+  background: $red;
+  .desc {
+    color: blue;
   }
-  .name{
-    background: green
+  .name {
+    background: green;
   }
 }
-
