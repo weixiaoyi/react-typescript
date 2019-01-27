@@ -96,7 +96,7 @@ module.exports = {
       '.jsx',
     ],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -145,7 +145,7 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+
               compact: true,
             },
           },
@@ -169,6 +169,29 @@ module.exports = {
           // "style" loader turns CSS into JS modules that inject <style> tags.
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
+          {
+            test: /\.scss$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('typings-for-css-modules-loader'),
+                options: {
+                  modules: true,
+                  namedExport: true,
+                  camelCase: true,
+                  minimize: true,
+                  localIdentName: "[local]_[hash:base64:5]"
+                },
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  outputStyle: 'expanded',
+                  sourceMap: true
+                },
+              },
+            ],
+          },
           {
             test: /\.css$/,
             use: [
