@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as styles from "./App.scss";
-// import { Inject } from "./utils";
 import HomeStore from "./store/HomeStore";
 
 import { observer, inject } from "mobx-react";
@@ -26,7 +25,7 @@ class App extends React.Component<IProps, IState> {
     console.log(homeStore, "------");
     return (
       <div className={styles.App}>
-        state{homeStore!.name}
+        {homeStore!.name}
         <div className={styles.desc} />
       </div>
     );

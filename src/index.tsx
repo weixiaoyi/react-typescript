@@ -6,6 +6,8 @@ import App from "./App";
 import { default as store } from "./store";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
+import "./testType";
+import "./testUseType";
 
 // 不允许在动作外部修改状态
 configure({ enforceActions: "always" });
