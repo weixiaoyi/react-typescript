@@ -1,6 +1,7 @@
 import {
   GetKeys,
   GetValues,
+  Overwrite,
   NoValueType,
   Merge,
   Omit,
@@ -28,9 +29,11 @@ type getKeys = GetKeys<Me>;
 
 type getValus = GetValues<Me>;
 
-type noType = NoValueType<Me, never>;
+type overwrite = Overwrite<Me2, Me3>;
 
-type mergeType = Merge<NoValueType<Me, never>, Me2>;
+type mergeType = Merge<Me2, Me3>;
+
+type noType = NoValueType<Me, never>;
 
 type omit = Omit<Me2, "name">;
 
